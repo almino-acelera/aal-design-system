@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Navigation — Tabs, Accordion" subtitle="Troca de seção e listas de currículo/FAQ" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--surface-page)}</style></head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Tabs, Accordion } = window.AALDESIGNSYSTEM_2e9d51;
+function Demo(){
+  const [t,setT] = React.useState('aulas');
+  const [f,setF] = React.useState('todos');
+  return (<div style={{display:'grid',gap:'var(--space-6)'}}>
+    <Tabs items={[{value:'aulas',label:'Aulas',count:24},{value:'materiais',label:'Materiais'},{value:'comunidade',label:'Comunidade'}]} value={t} onChange={setT}/>
+    <Tabs variant="pill" items={[{value:'todos',label:'Todos'},{value:'analise',label:'Análise'},{value:'construcao',label:'Construção'}]} value={f} onChange={setF}/>
+    <Accordion items={[
+      {question:'Serve para quem nunca vendeu high ticket?',answer:'Sim. O ARCO começa na Análise da Lacuna, então funciona mesmo para quem está no primeiro mês de carteira.'},
+      {question:'Quanto tempo por semana eu preciso?',answer:'Cerca de 2 horas: uma aula gravada e um encontro de prática ao vivo.'},
+      {question:'Tem certificado?',answer:'Sim, após concluir os quatro pilares e enviar a gravação de uma negociação real.'}
+    ]}/>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

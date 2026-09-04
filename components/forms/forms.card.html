@@ -1,0 +1,38 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Forms — Input, Textarea, Select, Checkbox, Radio, Switch" subtitle="Campos de aplicação e qualificação" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--surface-page)}</style></head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Input, Textarea, Select, Checkbox, Radio, Switch } = window.AALDESIGNSYSTEM_2e9d51;
+function Demo(){
+  const [v,setV] = React.useState('nome@empresa.com');
+  const [seg,setSeg] = React.useState('inside');
+  const [ok,setOk] = React.useState(true);
+  const [auto,setAuto] = React.useState(true);
+  return (<div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'var(--space-6)'}}>
+    <div style={{display:'grid',gap:'var(--space-4)'}}>
+      <Input label="Seu melhor e-mail" value={v} onChange={e=>setV(e.target.value)} hint="Enviamos o acesso na hora." iconLeft={<i data-lucide="mail" style={{width:15,height:15}}></i>}/>
+      <Input label="WhatsApp" placeholder="(11) 90000-0000" error="Preencha para continuar"/>
+      <Input label="Empresa" value="Bloqueado" disabled/>
+    </div>
+    <div style={{display:'grid',gap:'var(--space-4)'}}>
+      <Select label="Ticket médio" options={["Até R$ 2 mil","R$ 2 a 10 mil","Acima de R$ 10 mil"]}/>
+      <Textarea label="Qual é a lacuna do seu cliente hoje?" rows={4} placeholder="Duas ou três frases."/>
+    </div>
+    <div style={{display:'grid',gap:'var(--space-4)',alignContent:'start'}}>
+      <Radio name="a" label="Vendas internas" description="Inside sales / SDR" checked={seg==='inside'} onChange={()=>setSeg('inside')}/>
+      <Radio name="a" label="Vendas de campo" checked={seg==='campo'} onChange={()=>setSeg('campo')}/>
+      <Checkbox label="Aceito receber avisos da turma" checked={ok} onChange={e=>setOk(e.target.checked)}/>
+      <Checkbox label="Desativado" disabled/>
+      <Switch label="Reprodução automática" checked={auto} onChange={e=>setAuto(e.target.checked)}/>
+    </div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+setTimeout(()=>window.lucide&&lucide.createIcons(),50);
+</script></body></html>

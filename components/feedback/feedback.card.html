@@ -1,0 +1,39 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Feedback — Toast, Tooltip, ProgressBar, Dialog" subtitle="Confirmações, dicas e progresso" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--surface-page)}</style></head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Toast, Tooltip, ProgressBar, Dialog, Button, IconButton } = window.AALDESIGNSYSTEM_2e9d51;
+const I = ({n}) => <i data-lucide={n} style={{width:15,height:15}}></i>;
+function Demo(){
+  return (<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-6)'}}>
+    <div style={{display:'grid',gap:'var(--space-4)'}}>
+      <Toast tone="success" title="Aula concluída" description="Seu progresso no Pilar C subiu para 60%." icon={<I n="check"/>} onClose={()=>{}}/>
+      <Toast tone="warning" title="Faltam 3 vagas" description="O lote atual encerra hoje às 23h59." icon={<I n="alert-triangle"/>}/>
+      <div style={{display:'flex',gap:'var(--space-6)',alignItems:'center',paddingTop:4}}>
+        <Tooltip content="Baixar o script"><IconButton label="Baixar"><I n="download"/></IconButton></Tooltip>
+        <Tooltip content="Marcar como concluída" placement="right"><IconButton label="Concluir" variant="solid"><I n="check"/></IconButton></Tooltip>
+      </div>
+      <ProgressBar label="Arquitetura ARCO™" value={60}/>
+      <ProgressBar label="Pilar R — Reformulação" value={25} size="sm"/>
+    </div>
+    <div style={{position:'relative',minHeight:250,border:'1px dashed var(--border-hairline)',borderRadius:4,overflow:'hidden'}}>
+      <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center',background:'var(--overlay-scrim)'}}>
+        <div style={{width:'88%',background:'var(--surface-card)',border:'1px solid var(--border-hairline)',boxShadow:'var(--shadow-lg)',borderRadius:4,padding:'var(--space-6)'}}>
+          <div style={{fontFamily:'var(--font-sans)',fontSize:11,fontWeight:600,letterSpacing:'.24em',textTransform:'uppercase',color:'var(--text-gold)',marginBottom:10}}>Vagas limitadas</div>
+          <h3 style={{margin:'0 0 8px',fontSize:20}}>Garanta sua vaga na turma</h3>
+          <p style={{margin:0,fontSize:13,color:'var(--text-muted)'}}>Preencha em 2 minutos e nossa equipe retorna no mesmo dia.</p>
+          <div style={{display:'flex',gap:10,justifyContent:'flex-end',marginTop:20}}><Button variant="ghost" size="sm">Depois</Button><Button size="sm">Aplicar agora</Button></div>
+        </div>
+      </div>
+    </div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+setTimeout(()=>window.lucide&&lucide.createIcons(),50);
+</script></body></html>

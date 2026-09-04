@@ -1,0 +1,30 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Brand — Logo, SectionHeading, ArcoPillar, StatBlock, TestimonialCard" subtitle="Blocos com a assinatura visual da marca" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--surface-page)}</style></head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Logo, SectionHeading, ArcoPillar, StatBlock, TestimonialCard } = window.AALDESIGNSYSTEM_2e9d51;
+function Demo(){
+  return (<div style={{display:'grid',gap:'var(--space-8)'}}>
+    <div style={{display:'grid',gridTemplateColumns:'220px 1fr',gap:'var(--space-8)',alignItems:'center'}}>
+      <Logo variant="lockup" src="../../assets/logo-lockup.png" size={200}/>
+      <SectionHeading eyebrow="Arquitetura ARCO™" title="Diagnóstico em decisão, decisão em compromisso" lead="Quatro movimentos com postura consultiva transversal."/>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-4)'}}>
+      <ArcoPillar letter="A" index={1} name="Análise Estratégica da Lacuna™" description="Realidade atual, estado desejado e o gap com impacto."/>
+      <ArcoPillar letter="R" index={2} name="Reformulação da Percepção" description="Reenquadrar o problema com mais precisão que o cliente."/>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'var(--space-6)',borderTop:'1px solid var(--border-soft)',paddingTop:'var(--space-6)'}}>
+      <StatBlock value="R$ 10 mil" label="Comissão mensal alvo" note="Meta da Arquitetura ARCO™"/>
+      <StatBlock value="+2.400" label="Profissionais treinados" note="2021–2025"/>
+      <StatBlock value="4" label="Pilares" note="Análise · Reformulação · Construção · Organização"/>
+    </div>
+    <TestimonialCard quote="Fechei duas propostas na primeira semana só com a Análise da Lacuna. Parei de dar desconto para ser aceita." name="Camila Reis" role="Consultora imobiliária" result="R$ 14 mil em comissões"/>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

@@ -1,0 +1,46 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Core — Button, IconButton, Badge, Tag, Card" subtitle="Ações, marcadores e contêineres" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--surface-page)}.grp{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:14px}.lb{font-family:var(--font-sans);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-subtle);width:100%;margin-bottom:2px}</style></head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Badge, Tag, Card } = window.AALDESIGNSYSTEM_2e9d51;
+const I = ({n}) => <i data-lucide={n} style={{width:15,height:15}}></i>;
+function Demo(){
+  return (<div>
+    <div className="grp"><span className="lb">Button · variantes</span>
+      <Button variant="primary">Quero minha vaga</Button>
+      <Button variant="secondary">Baixar o guia</Button>
+      <Button variant="outline">Ver metodologia</Button>
+      <Button variant="ghost">Saiba mais</Button>
+      <Button variant="accent">Últimas vagas</Button>
+      <Button disabled>Encerrado</Button>
+    </div>
+    <div className="grp"><span className="lb">Tamanhos · com ícone</span>
+      <Button size="sm">Small</Button>
+      <Button size="md" iconRight={<I n="arrow-right"/>}>Medium</Button>
+      <Button size="lg" iconLeft={<I n="play"/>}>Large</Button>
+      <IconButton label="Play"><I n="play"/></IconButton>
+      <IconButton label="Baixar" variant="solid"><I n="download"/></IconButton>
+      <IconButton label="Fechar" variant="ghost"><I n="x"/></IconButton>
+    </div>
+    <div className="grp"><span className="lb">Badge · Tag</span>
+      <Badge tone="gold" dot>Turma aberta</Badge><Badge tone="success">Concluído</Badge><Badge tone="warning">Lote 2</Badge>
+      <Badge tone="danger">Encerrado</Badge><Badge tone="neutral">Rascunho</Badge><Badge tone="olive" solid>Novo</Badge>
+      <Tag active>Todos</Tag><Tag>Reformulação</Tag><Tag onRemove={()=>{}}>Construção</Tag>
+    </div>
+    <div className="grp" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)'}}><span className="lb">Card</span>
+      <Card padding="var(--space-4)"><strong style={{fontSize:13}}>default</strong></Card>
+      <Card variant="gold" padding="var(--space-4)"><strong style={{fontSize:13}}>gold</strong></Card>
+      <Card variant="raised" padding="var(--space-4)"><strong style={{fontSize:13}}>raised</strong></Card>
+      <Card variant="inverse" padding="var(--space-4)"><strong style={{fontSize:13,color:'var(--sand-50)'}}>inverse</strong></Card>
+    </div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+setTimeout(()=>window.lucide&&lucide.createIcons(),50);
+</script></body></html>
