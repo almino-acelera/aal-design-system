@@ -1,0 +1,12 @@
+# Arquivos gerados pelo compilador do design system
+_ds_bundle.js
+_ds_manifest.json
+_adherence.oxlintrc.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+node_modules/
+
+# Material de origem (fotos full-res, PNGs colados) - nao vai para o repo
+uploads/
