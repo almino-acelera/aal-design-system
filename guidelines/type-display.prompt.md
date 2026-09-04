@@ -1,0 +1,1 @@
+Dadas as características da fonte CINZEL DECORATIVE, apenas o "A" de Aline e o "A" de Arco deverão ser maiúsculos. Todas as outras letras nas palavras "Aline loiola" e "Arco" deverão ser minúsculas, mesmo que estejam em nome próprio, como "loiola". 

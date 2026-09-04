@@ -1,0 +1,14 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Movimento" subtitle="Fades e deslizes curtos; nada quica. Passe o mouse nos blocos" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{margin:0;padding:22px;background:var(--surface-page);font-family:var(--font-sans)}.row{display:flex;gap:16px}.c{text-align:center}.b{width:108px;height:56px;border-radius:4px;background:var(--olive-600);color:var(--gold-200);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.n{font-size:9px;color:var(--text-muted);margin-top:8px;letter-spacing:.06em}
+.b1{transition:background var(--dur-fast) var(--ease-standard)}.b1:hover{background:var(--olive-800)}
+.b2{transition:transform var(--dur-base) var(--ease-standard)}.b2:hover{transform:translateY(-3px)}
+.b3{transition:opacity var(--dur-slow) var(--ease-out)}.b3:hover{opacity:.35}
+.b4{transition:box-shadow var(--dur-reveal) var(--ease-out)}.b4:hover{box-shadow:var(--shadow-gold-glow)}</style></head><body>
+<div class="row">
+<div class="c"><div class="b b1">160ms</div><div class="n">fast · cor, borda</div></div>
+<div class="c"><div class="b b2">240ms</div><div class="n">base · hover, lift</div></div>
+<div class="c"><div class="b b3">420ms</div><div class="n">slow · abre/fecha</div></div>
+<div class="c"><div class="b b4">700ms</div><div class="n">reveal · scroll-in</div></div>
+</div>
+<div style="margin-top:12px;font-size:11px;color:var(--text-muted);letter-spacing:.04em">Easing padrão <code>cubic-bezier(.2,.6,.2,1)</code> · entrada de seção: fade + 16px para cima</div>
+</body></html>

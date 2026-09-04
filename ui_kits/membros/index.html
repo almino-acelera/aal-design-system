@@ -1,0 +1,48 @@
+<!-- @dsCard group="Área de Membros" viewport="1280x820" name="Membros — Arquitetura ARCO™" subtitle="Login, painel dos pilares e player de aula" -->
+<!-- @startingPoint section="Área de Membros" subtitle="Área de alunos: login, pilares e player" viewport="1280x820" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Área de alunos — Arquitetura ARCO™</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--surface-page)}</style></head><body>
+<div id="root"></div>
+<script type="text/babel" src="Shell.jsx"></script>
+<script type="text/babel" src="Login.jsx"></script>
+<script type="text/babel" src="Dashboard.jsx"></script>
+<script type="text/babel" src="Lesson.jsx"></script>
+<script type="text/babel" data-presets="react">
+const TITLES = {
+  trilha:{eyebrow:'Turma de outubro',title:'Sua Arquitetura ARCO™'},
+  aula:{eyebrow:'Pilar R · Reformulação da Percepção',title:'Reenquadrando o problema em três frases'},
+  scripts:{eyebrow:'Biblioteca',title:'Scripts e materiais'},
+  comunidade:{eyebrow:'Comunidade',title:'Alunos da turma'},
+  conta:{eyebrow:'Configurações',title:'Minha conta'}
+};
+function MembrosApp(){
+  const [logged,setLogged] = React.useState(false);
+  const [route,setRoute] = React.useState('trilha');
+  React.useEffect(()=>{ if(window.lucide) lucide.createIcons(); });
+  if(!logged) return <Login onEnter={()=>setLogged(true)}/>;
+  const meta = TITLES[route] || TITLES.trilha;
+  const view = route === 'aula' ? <Lesson go={setRoute}/>
+    : route === 'trilha' ? <Dashboard go={setRoute}/>
+    : <div style={{padding:'var(--space-8)'}}>
+        <div style={{border:'1px dashed var(--border-hairline)',borderRadius:4,padding:'var(--space-12)',textAlign:'center',color:'var(--text-muted)',fontFamily:'var(--font-sans)',fontSize:14}}>
+          Tela não especificada no material fornecido — deixada em branco de propósito.
+        </div>
+      </div>;
+  return (
+    <div style={{display:'flex',minHeight:'100vh'}}>
+      <Sidebar route={route} go={setRoute}/>
+      <div style={{flex:1,minWidth:0,display:'flex',flexDirection:'column'}}>
+        <Topbar eyebrow={meta.eyebrow} title={meta.title} onLogout={()=>setLogged(false)}/>
+        <div style={{flex:1}}>{view}</div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<MembrosApp/>);
+</script></body></html>
