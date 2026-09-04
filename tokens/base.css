@@ -1,0 +1,12 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--font-sans);font-size:var(--fs-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;text-wrap:pretty}
+h1,h2,h3,h4{font-family:var(--font-serif);color:var(--text-title);line-height:var(--lh-heading);letter-spacing:var(--ls-heading);font-weight:var(--fw-semibold);margin:0 0 var(--space-4)}
+h1{font-size:var(--fs-h1)}h2{font-size:var(--fs-h2)}h3{font-size:var(--fs-h3)}h4{font-size:var(--fs-h4)}
+p{margin:0 0 var(--space-4);max-width:var(--measure)}
+a{color:var(--text-link);text-decoration:none;border-bottom:1px solid var(--border-hairline);transition:color var(--dur-fast) var(--ease-standard),border-color var(--dur-fast) var(--ease-standard)}
+a:hover{color:var(--text-link-hover);border-bottom-color:var(--olive-600)}
+strong{font-weight:var(--fw-semibold);color:var(--text-title)}
+::selection{background:var(--gold-200);color:var(--olive-900)}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+.al-eyebrow{font-family:var(--font-sans);font-size:var(--fs-caption);font-weight:var(--fw-semibold);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-gold)}
+.al-rule-gold{height:1px;border:0;background:var(--gradient-gold);margin:var(--space-6) 0}

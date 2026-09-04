@@ -1,0 +1,6 @@
+:root{
+--radius-xs:2px;--radius-sm:4px;--radius-md:6px;--radius-lg:10px;--radius-xl:16px;--radius-pill:999px;
+--border-width-hair:1px; /* @kind spacing */
+--border-width-thick:2px; /* @kind spacing */
+--rule-width:1px; /* @kind spacing */
+}

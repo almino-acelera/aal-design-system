@@ -1,0 +1,31 @@
+:root{
+/* ---- Oliva (primary) — base #4e4c29 ---- */
+--olive-950:#14140a;--olive-900:#22210f;--olive-800:#32311a;--olive-700:#403f21;--olive-600:#4e4c29;--olive-500:#63603a;--olive-400:#7d7a4f;--olive-300:#9d9a72;--olive-200:#c3c0a2;--olive-100:#e2e0cd;--olive-50:#f4f3e9;
+/* ---- Dourado (secondary) — base #a58647 ---- */
+--gold-900:#4a3a17;--gold-800:#6b5325;--gold-700:#8a6f36;--gold-600:#a58647;--gold-500:#b99a5c;--gold-400:#c9ae76;--gold-300:#dcc79a;--gold-200:#ead9bd;--gold-100:#f5ecdb;--gold-50:#fbf6ec;
+/* ---- Marrom (support) ---- */
+--brown-900:#26190f;--brown-700:#422e1e;--brown-500:#6b4b32;--brown-300:#a3846a;--brown-100:#e7dacd;
+/* ---- Laranja (accent, sparing) ---- */
+--orange-700:#a9500f;--orange-600:#c4661c;--orange-500:#d47f36;--orange-300:#eab182;--orange-100:#f9e5d3;
+/* ---- Neutros quentes ---- */
+--sand-50:#faf8f2;--sand-100:#f3eee3;--sand-200:#e6dfd0;--sand-300:#d4ccb9;
+--ink-900:#1b190f;--ink-700:#3a3729;--ink-500:#6b6757;--ink-300:#9d9887;--white:#ffffff;
+/* ---- Semânticos ---- */
+--success-600:#5c7a3c;--success-100:#e8efdc;--warning-600:#a58647;--warning-100:#f5ecdb;--danger-600:#9e3a2a;--danger-100:#f6e2dd;--info-600:#4f6360;--info-100:#e3ebe9;
+
+/* ================= Aliases semânticos ================= */
+--brand-primary:var(--olive-600);--brand-primary-strong:var(--olive-800);--brand-secondary:var(--gold-600);--brand-accent:var(--orange-600);
+
+--surface-page:var(--sand-50);--surface-card:var(--white);--surface-raised:var(--sand-100);--surface-sunken:var(--sand-200);--surface-inverse:var(--olive-900);--surface-inverse-alt:var(--olive-800);--surface-gold:var(--gold-50);
+
+--text-title:var(--olive-800);--text-body:var(--ink-700);--text-muted:var(--ink-500);--text-subtle:var(--ink-300);--text-on-dark:var(--sand-100);--text-on-dark-muted:var(--olive-200);--text-gold:var(--gold-700);--text-link:var(--gold-700);--text-link-hover:var(--olive-700);
+
+--border-hairline:rgba(165,134,71,.32);--border-soft:var(--sand-200);--border-strong:var(--olive-300);--border-inverse:rgba(220,199,154,.24);
+
+--focus-ring:rgba(165,134,71,.55);
+--overlay-scrim:rgba(27,25,15,.62);
+
+--gradient-gold:linear-gradient(90deg,rgba(165,134,71,0) 0%,#a58647 22%,#dcc79a 50%,#a58647 78%,rgba(165,134,71,0) 100%); /* @kind color */
+--gradient-olive-deep:linear-gradient(160deg,#32311a 0%,#22210f 60%,#14140a 100%); /* @kind color */
+--gradient-protect-bottom:linear-gradient(180deg,rgba(20,20,10,0) 0%,rgba(20,20,10,.72) 60%,rgba(20,20,10,.94) 100%); /* @kind color */
+}
